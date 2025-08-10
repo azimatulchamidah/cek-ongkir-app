@@ -1,0 +1,414 @@
+/* Reset dan Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fce4ec, #f8bbd9, #f48fb1);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Container Utama App */
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Container */
+.form-container {
+  background: rgba(255, 182, 193, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Header Form */
+.form-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+/* Row Layout */
+.form-container .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Headers */
+.form-container .row > div h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+/* Label Styles */
+.form-container label {
+  display: block;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+.form-container label:first-of-type {
+  margin-top: 0;
+}
+
+/* Input dan Select Styles */
+.form-container select,
+.form-container input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e1bee7;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+}
+
+.form-container select:focus,
+.form-container input:focus {
+  outline: none;
+  border-color: #9c27b0;
+  box-shadow: 0 0 0 3px rgba(156, 39, 176, 0.1);
+  transform: translateY(-1px);
+}
+
+.form-container select:hover,
+.form-container input:hover {
+  border-color: #ba68c8;
+}
+
+/* Button Styles */
+.form-container button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(45deg, #2c3e50, #34495e);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+.form-container button:hover {
+  background: linear-gradient(45deg, #34495e, #2c3e50);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-container button:active {
+  transform: translateY(0);
+}
+
+/* Result Table Container */
+.result-table {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 25px;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-table h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Table Styles */
+.result-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.result-table table th {
+  background: linear-gradient(45deg, #f8bbd9, #f48fb1);
+  color: #2c3e50;
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.result-table table td {
+  background: rgba(255, 182, 193, 0.2);
+  padding: 15px;
+  text-align: center;
+  color: #2c3e50;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 182, 193, 0.3);
+  transition: all 0.2s ease;
+}
+
+.result-table table tr:nth-child(even) td {
+  background: rgba(255, 182, 193, 0.1);
+}
+
+.result-table table tr:hover td {
+  background: rgba(255, 182, 193, 0.4);
+  transform: scale(1.01);
+}
+
+/* Price Styling */
+.result-table table td:nth-child(2) {
+  font-weight: 700;
+  color: #e91e63;
+  font-size: 1.1rem;
+}
+
+/* Estimation Styling */
+.result-table table td:nth-child(3) {
+  font-weight: 600;
+  color: #4caf50;
+}
+
+/* Loading State */
+.form-container.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.form-container.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #9c27b0;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 10;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  .App {
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .form-container .row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .form-container h2 {
+    font-size: 2rem;
+  }
+  
+  .result-table h3 {
+    font-size: 1.5rem;
+  }
+  
+  .result-table table {
+    font-size: 0.9rem;
+  }
+  
+  .result-table table th,
+  .result-table table td {
+    padding: 10px 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .result-table table {
+    font-size: 0.8rem;
+  }
+  
+  .form-container button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+  
+  .form-container select,
+  .form-container input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #f48fb1, #f8bbd9);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #e91e63, #f48fb1);
+}
+
+/* Form Validation Styles */
+.form-container input:invalid {
+  border-color: #f44336;
+}
+
+.form-container input:valid {
+  border-color: #4caf50;
+}
+
+/* Focus styles untuk aksesibilitas */
+.form-container select:focus,
+.form-container input:focus,
+.form-container button:focus {
+  outline: 2px solid #9c27b0;
+  outline-offset: 2px;
+}
+
+/* Disabled state untuk select dan input */
+.form-container select:disabled,
+.form-container input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+}
+
+/* Hover effects untuk mobile */
+@media (hover: hover) {
+  .result-table table tr:hover td {
+    background: rgba(255, 182, 193, 0.4);
+    transform: scale(1.01);
+  }
+}
+
+/* Option styling */
+.form-container select option {
+  padding: 8px;
+  background: white;
+  color: #2c3e50;
+}
+
+/* Placeholder untuk input number */
+.form-container input[type="number"]::-webkit-outer-spin-button,
+.form-container input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Error state */
+.error-message {
+  color: #f44336;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Success animation untuk hasil */
+.result-table.show {
+  animation: slideInFromBottom 0.6s ease-out;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.note-container {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #fffbe6; /* warna sticky note */
+  border-left: 5px solid #ffc107;
+  font-style: italic;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
