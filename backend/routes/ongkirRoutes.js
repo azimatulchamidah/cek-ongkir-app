@@ -5,6 +5,6 @@ const ongkirController = require('../controllers/ongkirController');
 
 router.get('/provinces', ongkirController.getProvinces);
 router.get('/cities/:provinceId', ongkirController.getCities);
-router.post('/cost', ongkirController.getCost); // opsional, jika pakai satu kurir
+router.post('/cost', ongkirController.getCost); 
 
 module.exports = router;
